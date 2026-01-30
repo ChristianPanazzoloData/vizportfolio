@@ -1,0 +1,41 @@
+theLook eCommerce | Business Intelligence & Statistical Analysis
+This project presents a specialized data analysis of theLook, a global eCommerce dataset. It integrates cloud data warehousing with Google BigQuery, advanced statistical computing with Python, and interactive visualization via Looker Studio.
+
+🔗 Live Dashboard
+View Interactive Dashboard on Looker Studio
+
+🛠️ Technical Stack
+Data Warehouse: Google BigQuery (SQL)
+
+Programming: Python (Pandas)
+
+Advanced Analytics: Plotly (Statistical Visualizations)
+
+BI Visualization: Looker Studio
+
+Deployment: GitHub Pages (Hosting interactive HTML components)
+
+📊 Key Features & Analytical Insights
+1. Strategic Performance Overview (KPIs)
+Real-time tracking of core business metrics for the 2023-2025 period, including Total Revenue ($9.16M), Average Order Value (AOV), and Average Profit Margin. This layer provides an immediate health check of the operation's scale.
+
+2. Product Portfolio Mix (Interactive Bubble Chart)
+Developed with Python & Plotly A multidimensional analysis correlating Revenue, Average Margin, and Order Volume by category. This visualization identifies "Profit Engines" and high-potential product lines, moving beyond simple sales volume to true profitability.
+
+3. Price Dispersion & Outlier Detection (Box Plot)
+Statistical Distribution Focused on key categories such as Outerwear, Sweaters, and Jeans, this chart analyzes pricing architecture. It allows for the identification of premium price outliers and helps evaluate pricing consistency across the catalog.
+
+4. Operational Activity Density (Heatmap)
+Temporal Analysis A heat-mapped distribution of orders by day and hour. This insight is critical for optimizing marketing automation, server scalability, and logistics planning based on peak customer engagement periods.
+
+📉 Project Architecture
+Extraction: Large-scale data retrieval from BigQuery using optimized SQL.
+
+Transformation: Data processing and statistical aggregation in Python.
+
+Integration: Seamless embedding of Plotly-generated interactive assets into the Looker Studio environment.
+
+Validation: Focus on data integrity and business-relevant KPIs for executive decision-making.
+
+👤 Author
+Christian Panazzolo Data Analyst | Business Intelligence Specialist
