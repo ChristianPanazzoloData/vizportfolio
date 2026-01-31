@@ -1,41 +1,40 @@
-theLook eCommerce | Business Intelligence & Statistical Analysis
-This project presents a specialized data analysis of theLook, a global eCommerce dataset. It integrates cloud data warehousing with Google BigQuery, advanced statistical computing with Python, and interactive visualization via Looker Studio.
+# E-commerce Advanced Analytics & BI Dashboard
+### 🚀 Market & Customer Intelligence Solution
 
-🔗 Live Dashboard
-View Interactive Dashboard on Looker Studio
+## Project Overview
+This project delivers a high-end Business Intelligence solution using the **theLook eCommerce** dataset. It transcends basic reporting by implementing statistical normalization, geographic intelligence, and behavioral profiling. The end goal is to transform raw cloud-based data into a strategic roadmap for market expansion and customer retention.
 
-🛠️ Technical Stack
-Data Warehouse: Google BigQuery (SQL)
+## Strategic Objectives
+* **Data Architecture:** Streamline extraction from BigQuery using optimized SQL to handle high-volume transactional data.
+* **Customer Persona Mapping:** Analyze behavioral patterns (Frequency, Diversity, Spending) to define regional profiles.
+* **Operational Efficiency:** Identify logistical and marketing "peak zones" through temporal density analysis.
+* **Regional Dominance:** Pinpoint market leadership by state, identifying the drivers of each specific market.
 
-Programming: Python (Pandas)
+## Tech Stack & Advanced Implementation
+* **Engine:** Google BigQuery (Standard SQL)
+* **Logic:** Python 3.x (Pandas for data wrangling)
+* **Visual Engineering:** Plotly (Express & Graph Objects)
+* **Advanced SQL Techniques:** Extensive use of **Common Table Expressions (CTEs)** and **Window Functions** (`RANK()`, `PARTITION BY`, `OVER`) for complex multi-dimensional aggregations.
 
-Advanced Analytics: Plotly (Statistical Visualizations)
+## Key Visualizations & Analytical Depth
 
-BI Visualization: Looker Studio
+### 1. US Market Performance: Revenue & Category Leadership (Choropleth)
+* **Analytical Impact:** Provides a geographic "heat" view of revenue while embedding **Category Leadership** via tooltips. This allows executives to identify which product lines dominate specific regions.
+* **Technical Highlight:** Implements 90th percentile normalization for color scales to ensure visual contrast across all states.
 
-Deployment: GitHub Pages (Hosting interactive HTML components)
+### 2. Strategic Persona Mapping: Top 5 States (Radar Chart)
+* **Analytical Impact:** Compares the "DNA" of the top 5 revenue-generating states. It reveals if a state's performance is driven by high-frequency shoppers or high-ticket luxury buyers.
+* **Metrics:** Normalized Total Revenue, Average Ticket, Category Diversity, and Purchase Frequency.
+* **Technical Highlight:** Uses **Max-Based Normalization** to ensure all axes are comparable regardless of their original scale.
 
-📊 Key Features & Analytical Insights
-1. Strategic Performance Overview (KPIs)
-Real-time tracking of core business metrics for the 2023-2025 period, including Total Revenue ($9.16M), Average Order Value (AOV), and Average Profit Margin. This layer provides an immediate health check of the operation's scale.
+### 3. Order Density & Staffing Optimization (Heatmap)
+* **Analytical Impact:** Visualizes the "heartbeat" of the operation. Essential for scheduling customer support and warehouse shifts based on historical peak hours.
 
-2. Product Portfolio Mix (Interactive Bubble Chart)
-Developed with Python & Plotly A multidimensional analysis correlating Revenue, Average Margin, and Order Volume by category. This visualization identifies "Profit Engines" and high-potential product lines, moving beyond simple sales volume to true profitability.
+### 4. Half-Yearly Growth Dynamics (Dual-Axis)
+* **Analytical Impact:** Correlates User Acquisition (Unique Buyers) with Value (Avg Spend). It answers: "Are we growing by volume or by customer value?"
 
-3. Price Dispersion & Outlier Detection (Box Plot)
-Statistical Distribution Focused on key categories such as Outerwear, Sweaters, and Jeans, this chart analyzes pricing architecture. It allows for the identification of premium price outliers and helps evaluate pricing consistency across the catalog.
-
-4. Operational Activity Density (Heatmap)
-Temporal Analysis A heat-mapped distribution of orders by day and hour. This insight is critical for optimizing marketing automation, server scalability, and logistics planning based on peak customer engagement periods.
-
-📉 Project Architecture
-Extraction: Large-scale data retrieval from BigQuery using optimized SQL.
-
-Transformation: Data processing and statistical aggregation in Python.
-
-Integration: Seamless embedding of Plotly-generated interactive assets into the Looker Studio environment.
-
-Validation: Focus on data integrity and business-relevant KPIs for executive decision-making.
-
-👤 Author
-Christian Panazzolo Data Analyst | Business Intelligence Specialist
+## Technical Deep Dive: SQL Logic Example
+To ensure accuracy, the analysis uses advanced partitioning:
+```sql
+-- Identifying the #1 category for every state in a single pass
+RANK() OVER (PARTITION BY u.state ORDER BY COUNT(oi.id) DESC) as category_rank
